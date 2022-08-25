@@ -14,9 +14,22 @@ class Hero {
     this.baseDemage = demage;
     // super();
   }
+  getMana(): number {
+    return this.mana;
+  }
+  getName(): string {
+    return this.name;
+  }
+  getBaseDemage(): number {
+    return this.baseDemage;
+  }
+  getHp(): number {
+    return this.hp;
+  }
 
-  getHit(demage: number) {
-    this.hp -= demage;
+  heal(hero: Hero) {
+    hero.hp += this.mana / 2;
+    this.mana -= this.mana / 2;
   }
   receiveDemage(demage: number) {
     this.hp -= demage;
@@ -25,3 +38,6 @@ class Hero {
     hero.receiveDemage(this.baseDemage);
   }
 }
+
+
+export default Hero;

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 class Hero {
     constructor(name, hp, mana, demage) {
         this.name = name;
@@ -6,8 +7,21 @@ class Hero {
         this.mana = mana;
         this.baseDemage = demage;
     }
-    getHit(demage) {
-        this.hp -= demage;
+    getMana() {
+        return this.mana;
+    }
+    getName() {
+        return this.name;
+    }
+    getBaseDemage() {
+        return this.baseDemage;
+    }
+    getHp() {
+        return this.hp;
+    }
+    heal(hero) {
+        hero.hp += this.mana / 2;
+        this.mana -= this.mana / 2;
     }
     receiveDemage(demage) {
         this.hp -= demage;
@@ -16,3 +30,4 @@ class Hero {
         hero.receiveDemage(this.baseDemage);
     }
 }
+exports.default = Hero;
