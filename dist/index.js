@@ -1,9 +1,29 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const hero_1 = __importDefault(require("./obj/hero"));
-const Bojong = new hero_1.default("Bojong", 100, 100, 5);
-const Haikal = new hero_1.default("Haikal", 100, 100, 20);
-console.log();
+function getArray(items) {
+    return new Array().concat(items);
+}
+let myNumArr = getArray([100, 200, 300]);
+let myStrArr = getArray(["Hello", "World"]);
+myNumArr.push(400);
+myStrArr.push("Hello TypeScript");
+myNumArr.push("Hi");
+myStrArr.push(500);
+console.log(myNumArr);
+console.log(myStrArr);
+function getData(items) {
+    return new Array().concat(items);
+}
+let dadu = getData([1, 2, 3, 4, 5]);
+let pejudi = getData(["Yuki", "Suho"]);
+dadu.push(6);
+pejudi.push("Soya");
+const employeee = getData([
+    {
+        name: "cecep",
+        age: 12,
+    },
+    {
+        name: "Aicep",
+        age: 15,
+    },
+]);
