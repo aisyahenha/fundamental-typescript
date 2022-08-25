@@ -1,23 +1,21 @@
-interface Paging{
-  page: number;
-  rowsPerPage: number;
-  totalRows: number;
-  totalPage: number;
-}
-interface ResponEntity<T> {
-  code: number;
-  message: string;
-  data: T;
-}
-class SingleResponse<T> implements ResponEntity<T> {
-  code: number;
-  message: string;
-  data: T;
-}
+import Cafe from "./obj/promise";
 
-class PagedResponse<T> implements ResponEntity<T> {
-  code: number;
-  message: string;
-  data: T;
-  paging: Paging;
-}
+const orders: string[] = [
+  "kopi hitam",
+  "kopi moka",
+  "kopi putih",
+  "Torabika",
+  "Arabica",
+];
+const takeOrder: Promise<string>[] = orders.map((order: string) => {
+  return new Cafe().orderCofeeAsync(order);
+});
+
+// Promise.all(takeOrder)
+// .then((result:string[])=>{
+//   console.log(result);
+  
+// })
+// .catch((error)=>{
+//   console.error(error)
+// })
